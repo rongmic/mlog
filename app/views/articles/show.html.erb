@@ -1,0 +1,18 @@
+<div class="inner">
+  <div class="articles">
+      <article>
+        <header><h2><%= @article.title %></h2></header>
+        <p>
+          <%= @article.content %>
+        </p>
+        <footer>
+          <p>
+            <span title="<%= @article.created_at %>"><%= date_format @article.created_at %></span>
+            (
+            <%= link_to @article.category.name, @article.category %>
+            )
+          </p>
+        </footer>
+      </article>
+  </div>
+</div>

@@ -30,6 +30,11 @@ gem 'jbuilder', '~> 1.2'
 # Rspec test
 gem 'rspec-rails'
 
+# Foundation Framework
+gem 'zurb-foundation', '~> 4.0'
+
+gem 'kaminari'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

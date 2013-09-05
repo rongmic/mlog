@@ -1,0 +1,42 @@
+// Place all the styles related to the articles controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.articles article+article {
+border-top: 1px solid #F1F1F1;
+margin-top: 4em;
+padding-top: 4em;
+}
+
+.articles article header {
+  margin-bottom: 1.75em;
+  h2 {
+    font-size: 1.5em;
+    a {
+      text-decoration: none;
+    }
+  }
+}
+
+.articles footer {
+  color: #CBCBCB;
+  font-size: 0.9em;
+  font-style: italic;
+  a {
+    color: #CBCBCB;
+    font-size: 0.9em;
+    font-style: italic;
+    &:hover {
+      color: #58D1A5;
+    }
+  }
+}
+
+.articles footer a {
+  text-decoration: underline;
+}
+
+
+section .sidebar {
+  text-align: right;
+  margin-bottom: 20px;
+}
