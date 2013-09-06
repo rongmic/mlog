@@ -33,8 +33,6 @@ gem 'rspec-rails'
 # Foundation Framework
 gem 'zurb-foundation', '~> 4.0'
 
-gem 'foundation-icons-sass-rails'
-
 gem 'kaminari'
 
 group :doc do
