@@ -7,12 +7,14 @@
 <div class="large-4 columns">
   <section class="sidebar">
     <div class="row collapse">
+      <%= form_tag "/search", method: "get" do %>
       <div class="small-10 columns">
-        <input type="text" placeholder="Search">
+        <input type="text" name="s" placeholder="Search">
       </div>
       <div class="small-2 columns">
-        <a href="#" class="button prefix"><i class="foundicon-search"></i></a>
+        <a type="submit" href="/search?s=<%= @search_key %>" class="button prefix"><i class="foundicon-search"></i></a>
       </div>
+        <% end %>
     </div>
   </section>
 

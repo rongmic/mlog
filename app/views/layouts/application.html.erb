@@ -35,7 +35,7 @@
             <li><%= link_to "Category", categories_path %></li>
             <li><%= link_to "Contact", '/' %></li>
           </ul>
-          </div>
+        </div>
       </div>
     </header>
     <section id="main" role="main">
@@ -43,7 +43,19 @@
         <%= yield %>
       </div>
     </section>
-    <footer>
+    <footer id="footer">
+      <div class="row">
+        <section class="small-6 columns">
+          <p>adfas</p>
+          <p>
+            <span>
+              Source code for this site is available <a href="">on GitHub</a>.
+            </span>
+          </p>
+        </section>
+        <nav class="small-6 columns">
+        </nav>
+      </div>
     </footer>
 
     <%= javascript_include_tag "application" %>

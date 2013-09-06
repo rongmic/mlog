@@ -12,6 +12,13 @@ class ArticlesController < ApplicationController
   def show
   end
 
+  def search
+    @articles = Article.search(params[:s]).page(params[:page]).per(10)
+    @categories = Category.all
+    @search_key = params[:s]
+    render 'index', search_key: @search_key
+  end
+
   private
   def set_article
     @article = Article.find(params[:id])

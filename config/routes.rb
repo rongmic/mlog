@@ -9,6 +9,7 @@ Mlog::Application.routes.draw do
 
   resources :articles
   resources :categories
+  get 'search' => 'articles#search', as: :search
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

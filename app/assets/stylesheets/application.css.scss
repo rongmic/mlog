@@ -16,8 +16,39 @@
 .inner {max-width: 75%;float:left;}
 figure {margin:0;padding:0}
 figure figcaption {color:#CBCBCB;font-style:italic;padding-top:4px;}
-/*footer {border-top: 1px solid #F1F1F1;
-padding: 2em 0 4em;
-margin-top: 6em;
+
+#footer {border-top: 1px solid #F1F1F1;
+  padding: 2em 0 4em;
+  margin-top: 6em;
+  p {
+    font-size: 0.9em;
+    span, a {
+      color: #CBCBCB;
+    }
+    a {
+      text-decoration: underline;
+    }
+  }
+  p+p {
+    margin-top: 1.75em;
+  }
+  nav {
+    text-align: right;
+  }
 }
-*/
+
+article footer a {color: #CBCBCB;}
+
+.side-nav a {
+  color: #2BA6CB;
+  &:hover, &:focus {
+    color: darken(#2BA6CB, 20%);
+  }
+}
+
+.empty {
+  color: #CBCBCB;
+  font-style: italic;
+  margin-top: 20px;
+}
+
