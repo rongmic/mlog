@@ -1,10 +1,10 @@
 @font-face {
   font-family: 'generalFoundicons';
-  src: url('fonts/general_foundicons.eot');
-  src: url('fonts/general_foundicons.eot?#iefix') format('embedded-opentype'),
-       url('fonts/general_foundicons.woff') format('woff'),
-       url('fonts/general_foundicons.ttf') format('truetype'),
-       url('fonts/general_foundicons.svg#[generalFoundicons') format('svg');
+  src: url('/assets/general_foundicons.eot');
+  src: url('/assets/general_foundicons.eot?#iefix') format('embedded-opentype'),
+       url('/assets/general_foundicons.woff') format('woff'),
+       url('/assets/general_foundicons.ttf') format('truetype'),
+       url('/assets/general_foundicons.svg#[generalFoundicons') format('svg');
   font-weight: normal;
   font-style: normal;
 }
@@ -28,7 +28,7 @@
 }
 
 .foundicon-search:before {
-  content: \f02e";
+  content: "\f02e";
 }
 
 a {
