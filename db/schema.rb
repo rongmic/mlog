@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130905073810) do
+ActiveRecord::Schema.define(version: 20130907140237) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
@@ -28,6 +28,13 @@ ActiveRecord::Schema.define(version: 20130905073810) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "articles_count", default: 0
+  end
+
+  create_table "hitcounts", force: true do |t|
+    t.integer  "count",      default: 0
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "article_id"
   end
 
 end

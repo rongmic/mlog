@@ -10,7 +10,9 @@
         <span title="<%= article.created_at %>"><%= date_format article.created_at %></span>
         (
         #<%= link_to article.category.name, article.category %>
-      )
+        )
+        ,
+        <i class="foundicon-eyeball"></i><%= article.hitcount.count %>
       </p>
     </footer>
   </article>
