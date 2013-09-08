@@ -6,4 +6,8 @@ class Article < ActiveRecord::Base
   def self.search query
     published.where("title like ?", "%#{query}%")
   end
+
+  def self.most_viewed
+    published.joins(:hitcount).order("count DESC").limit(5)
+  end
 end

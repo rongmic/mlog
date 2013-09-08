@@ -5,6 +5,7 @@ class ArticlesController < ApplicationController
   def index
     @articles = Article.published.page(params[:page]).per(10)
     @categories = Category.all
+    @most_viewed_articles = Article.most_viewed
   end
 
   def create
