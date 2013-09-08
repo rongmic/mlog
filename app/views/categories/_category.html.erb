@@ -3,7 +3,7 @@
   <% @categories.each do |category| %>
     <li>
       <%= link_to(category) do %>
-        <%= category.name %> <kbd><%= category.articles.count %></kbd>
+        <%= category.name %> <kbd><%= category.articles_count %></kbd>
       <% end %>
     </li>
     <li class="divider"></li>
