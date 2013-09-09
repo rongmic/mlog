@@ -1,30 +1,47 @@
-<table>
-  <thead>
-    <tr>
-      <th width="200">Table Header</th>
-      <th>Table Header</th>
-      <th width="150">Table Header</th>
-      <th width="150">Table Header</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Content Goes Here</td>
-      <td>This is longer content Donec id elit non mi porta gravida at eget metus.</td>
-      <td>Content Goes Here</td>
-      <td>Content Goes Here</td>
-    </tr>
-    <tr>
-      <td>Content Goes Here</td>
-      <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
-      <td>Content Goes Here</td>
-      <td>Content Goes Here</td>
-    </tr>
-    <tr>
-      <td>Content Goes Here</td>
-      <td>This is longer Content Goes Here Donec id elit non mi porta gravida at eget metus.</td>
-      <td>Content Goes Here</td>
-      <td>Content Goes Here</td>
-    </tr>
-  </tbody>
-</table>
+<nav class="breadcrumbs">
+  <%= link_to "Articles", admin_articles_path %>
+  <span>List</span>
+</nav>
+
+<div class="section-container auto" data-section>
+  <section>
+    <p class="title" data-section-title><a href="#panel1">Articles</a></p>
+    <div class="content" data-section-content>
+
+      <table>
+        <thead>
+          <tr>
+            <th width="200">Title</th>
+            <th width="400">Content</th>
+            <th>Detail</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @articles.each do |article| %>
+            <tr>
+              <td><%= link_to article.title, '#' %></td>
+              <td><%= article.content %></td>
+              <td>
+                <%= article.created_at %>
+                , Top: <%= article.top %>
+            </td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</section>
+<section>
+  <p class="title" data-section-title><a href="#panel2">Published</a></p>
+  <div class="content" data-section-content>
+    <p>Content of section 2.</p>
+  </div>
+</section>
+
+<section>
+  <p class="title" data-section-title><a href="#panel2">Draft</a></p>
+  <div class="content" data-section-content>
+    <p>Content of section 2.</p>
+  </div>
+</section>
+</div>

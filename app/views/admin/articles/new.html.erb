@@ -1,0 +1,39 @@
+<nav class="breadcrumbs">
+  <%= link_to "Articles", admin_articles_path %>
+  <a href="javascript:;" class="unaviable current">New Article</a>
+</nav>
+
+<%= form_for @article, url: admin_articles_path do |f| %>
+  <div class="row">
+    <div class="large-6 columns">
+      <%= f.label :title %>
+      <%= f.text_field :title, placeholder: "Title" %>
+    </div>
+  </div>
+  <div class="row">
+    <div class="large-6 columns">
+      <%= f.select :category_id, @categories.collect { |c| [c.name, c.id] }, { include_blank: "Please select category" }, class: "medium" %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="large-6 columns">
+      <%= f.label :content %>
+      <%= f.text_area :content, placeholder: "Content here" %>
+    </div>
+  </div>
+  
+  <div class="row">
+    <div class="large-6 columns">
+      <label><%= f.check_box :top %>&nbsp;Set Top</label>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="large-12 columns">
+      <div class="panel">
+        <%= f.submit %>
+        </div>
+      </div>
+    </div>
+<% end %>
