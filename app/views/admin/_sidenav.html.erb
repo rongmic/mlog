@@ -1,16 +1,16 @@
-<div class="panel">
-  <div class="section_content">
-    <section>
-      <p class="title"><a href="/admin/dashboard">Dashboard</a></p>
-      <div class="content"></div>
-    </section>
-    <section>
-      <p class="title"><a href="/admin/articles">Articles</a></p>
-      <div class="content">
+<div id="sidenav" class="section_content">
+  <section>
+    <p class="title"><a href="/admin/dashboard">Dashboard</a></p>
+  </section>
+  <section>
+    <p class="title"><a href="/admin/articles">Articles</a></p>
+    <div class="content">
+      <div class="subnav">
         <ul>
-          <li><%= link_to "New Article", new_admin_article_path %></li>
-        </ul>
+          <li><%= link_to "New Article", new_admin_article_path %><li>
+          <li><%= link_to "Published", '' %><li>
+              </ul>
       </div>
-    </section>
-  </div>
+    </div>
+  </section>
 </div>

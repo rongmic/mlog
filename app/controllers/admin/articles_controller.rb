@@ -11,9 +11,10 @@ class Admin::ArticlesController < Admin::BaseAdminController
   end
 
   def create
-    @article = Article.new(article_params.merge!(status: 1))
+    @article = Article.new(article_params.merge!({status: 1}))
     respond_to do |format|
       if @article.save
+        Hitcount.create(article_id: @article.id)
         format.html { redirect_to admin_articles_path }
       else
         format.text { "Occure Error while creating a new article" }

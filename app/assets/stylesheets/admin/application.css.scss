@@ -14,6 +14,53 @@
 
 @import 'foundation';
 
+#sidenav {
+  border-top: 1px solid #CCC;
+  section {
+    background: #EEE;
+    p {
+      border: 1px solid #CCC;
+      border-top: 0;
+      margin: 0;
+      padding: 0;
+      a {
+        padding: 0.9375em;
+        color: #333333;
+        font-size: 0.875em;
+        background: none;
+        display: block;
+        &:hover {
+          background: #DDD;
+        }
+      }
+    }
+    .content {
+      background: #FFF;
+      border: 1px solid #CCC;
+      border-top: 0;
+      .subnav {
+        padding: 10px 20px;
+        ul {
+          li {
+            list-style: none;
+          }
+        }
+      }
+    }
+  }
+}
+
 nav.breadcrumbs {
   margin-bottom: 20px;
+}
+
+.content table {
+  border: 0;
+}
+
+form.custom {
+  padding: 20px;
+  .submit-panel {
+    margin-top: 1.25em;
+  }
 }
