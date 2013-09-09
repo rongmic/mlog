@@ -7,10 +7,17 @@
     <div class="content">
       <div class="subnav">
         <ul>
-          <li><%= link_to "New Article", new_admin_article_path %><li>
-          <li><%= link_to "Published", '' %><li>
-              </ul>
+          <li>
+            <%= link_to "New Article", new_admin_article_path %>
+          <li>
+          <li>
+            <%= link_to "Published", new_admin_article_path %>
+          </li>
+        </ul>
       </div>
     </div>
+  </section>
+  <section>
+    <p class="title"><%= link_to "Category", '' %></p>
   </section>
 </div>
