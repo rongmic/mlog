@@ -24,7 +24,7 @@
       margin: 0;
       padding: 0;
       a {
-        padding: 0.9375em;
+        padding: 0.6em 1.75em;
         color: #333333;
         font-size: 0.875em;
         background: none;
@@ -39,8 +39,10 @@
       border: 1px solid #CCC;
       border-top: 0;
       .subnav {
-        padding: 10px 20px;
+        padding: 0.6em 2em;
         ul {
+          margin: 0;
+          font-size: 14px;
           li {
             list-style: none;
           }
