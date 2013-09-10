@@ -29,14 +29,19 @@
         <!-- Right Nav Section -->
         <ul class="right">
           <li class=""><a href="#">Notices <span class="round alert label">5</span></a></li>
-          <li><a href="#">Settings</a></li>
-          <li class="logged-in">
+          <li class="admin-info">
             <a href="#">
               <div class="avatar">
-                <img src="http://placehold.it/25x25"> 
-                User-Name Here
+                <%= image_tag current_user.avatar, size: "20x20" %> 
+                &nbsp;
+                <%= current_user.name %>
               </div>
             </a>
+          </li>
+          <li>
+            <%= link_to admin_logout_path, method: "delete" do %>
+              Logout <i class="foundicon-right-arrow"></i>
+            <% end %>
           </li>
         </ul>
       </section>

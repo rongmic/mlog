@@ -13,7 +13,10 @@ Mlog::Application.routes.draw do
   get 'search' => 'articles#search', as: :search
 
   namespace :admin do
-    get 'dashboard' => 'dashboard#index', as: :dashboard
+    get '/login', to: "sessions#new", as: :login
+    get '/auth/weibo/callback', to: 'sessions#create'
+    delete '/logout', to: "sessions#destroy", as: :logout
+    get 'dashboard' => 'dashboard#index', as: :root
     resources :articles
   end
 
