@@ -18,6 +18,7 @@ Mlog::Application.routes.draw do
     delete '/logout', to: "sessions#destroy", as: :logout
     get 'dashboard' => 'dashboard#index', as: :root
     resources :articles
+    resources :categories
   end
 
   # Example of regular route:

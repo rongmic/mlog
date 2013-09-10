@@ -16,6 +16,7 @@ class Admin::ArticlesController < Admin::BaseAdminController
       if @article.save
         Hitcount.create(article_id: @article.id)
         format.html { redirect_to admin_articles_path }
+        format.text { "Hello" }
       else
         format.text { "Occure Error while creating a new article" }
       end
