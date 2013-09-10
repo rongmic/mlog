@@ -35,6 +35,8 @@ gem 'zurb-foundation', '~> 4.0'
 
 gem 'kaminari'
 
+gem 'omniauth-weibo-oauth2'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
