@@ -10,7 +10,9 @@
  *
  *= require_self
  *= require foundation_and_overrides
- *= require_tree
+ *= require foundation
+ *= require articles
+ * require_tree
  */
 
 .inner {max-width: 75%;float:left;}

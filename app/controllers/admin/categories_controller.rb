@@ -2,10 +2,8 @@ class Admin::CategoriesController < Admin::BaseAdminController
   before_action :set_category, only: [:edit, :update, :show, :destroy]
 
   def index
-  end
-
-  def new
     @category = Category.new
+    @categories = Category.all
   end
 
   def create
@@ -17,6 +15,10 @@ class Admin::CategoriesController < Admin::BaseAdminController
       else
       end
     end
+  end
+
+  def destroy
+    @category.destroy
   end
 
   private

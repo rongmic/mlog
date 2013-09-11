@@ -60,8 +60,12 @@ nav.breadcrumbs {
   border: 0;
 }
 
+.main_content {
+  padding: 0 20px;
+}
+
 form.custom {
-  padding: 20px;
+  //padding: 20px;
   .submit-panel {
     margin-top: 1.25em;
   }
