@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130910060402) do
+ActiveRecord::Schema.define(version: 20130912074222) do
 
   create_table "articles", force: true do |t|
     t.string   "title"
@@ -35,6 +35,15 @@ ActiveRecord::Schema.define(version: 20130910060402) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "article_id"
+  end
+
+  create_table "site_configs", force: true do |t|
+    t.string   "site_name"
+    t.integer  "admin_page_size"
+    t.integer  "front_page_size"
+    t.boolean  "article_top_func", default: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", force: true do |t|

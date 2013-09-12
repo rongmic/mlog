@@ -14,6 +14,7 @@ Mlog::Application.routes.draw do
 
   namespace :admin do
     get '/login', to: "sessions#new", as: :login
+    get '/settings', to: "config#index", as: :settings
     get '/auth/weibo/callback', to: 'sessions#create'
     delete '/logout', to: "sessions#destroy", as: :logout
     get 'dashboard' => 'dashboard#index', as: :root
