@@ -11,9 +11,9 @@ $(document).ready ->
       return false
     return true
 
-  $(".edit_category").click ->
-    alert(1)
+  $(document).on "click", ".edit_category", ->
 
   $ ->
-    $("a[data-remote].del").on "ajax:success", (e, data, status, xhr) ->
-      alert "The post was deleted."
+    $(document).on "ajax:success", "a[data-remote].del", (e, data, status, xhr) ->
+      if(data > 0)
+        $(this).parent('td').parent('tr').remove()

@@ -1,0 +1,2 @@
+$('table').replaceWith('<%= escape_javascript(render(partial: "category_list", locals: {categories: @categories})) %>');
+$('form')[0].reset();

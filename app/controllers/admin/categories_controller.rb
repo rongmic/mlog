@@ -11,14 +11,34 @@ class Admin::CategoriesController < Admin::BaseAdminController
 
     respond_to do |format|
       if @category.save
+        @categories = Category.all
+        format.js
         format.html { render :new }
       else
       end
     end
   end
 
+  def edit
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  def update
+    respond_to do |format|
+      if @category.update(category_params)
+      else
+
+      end
+    end
+  end
+
   def destroy
-    @category.destroy
+    result = @category.destroy ? 1 : 0;
+    respond_to do |format|
+      format.json { render json: result }
+    end
   end
 
   private

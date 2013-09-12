@@ -1,0 +1,18 @@
+<%= form_for @category, remote: true, url: admin_categories_path, html: {class: "custom"} do |f| %>
+  <fieldset>
+    <legend>New Category</legend>
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="row collapse">
+          <div class="large-10 columns">
+            <%= f.text_field :name, placeholder: "Category Name" %>
+            <small class="error show-for-small">Category name required</small>
+          </div>
+          <div class="small-2 columns">
+            <%= f.submit "Save", remote: true, class: "small button postfix" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </fieldset>
+<% end %>

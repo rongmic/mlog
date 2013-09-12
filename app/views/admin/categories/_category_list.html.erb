@@ -13,8 +13,8 @@
       <td><%= index+1 %></td>
       <td><%= category.name %></td>
       <td><%= category.created_at.strftime("%Y-%m-%d %H:%M:%S") %></td>
-      <td><a href="javascript:;" class="edit_category">Edit</a></td>
-      <td><%= link_to "Delete", admin_category, remote: true, method: "delete", class: "del" %></td>
+      <td><%= link_to "Edit", edit_admin_category_path(category), remote: true, class: "edit_category" %></a></td>
+      <td><%= link_to "Delete", admin_category_path(category), remote: true, method: "delete", class: "del" %></td>
     </tr>
     <% end %>
   </tbody>
