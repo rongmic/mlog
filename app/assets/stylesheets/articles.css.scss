@@ -36,3 +36,10 @@ section .sidebar {
   text-align: right;
   margin-bottom: 20px;
 }
+
+.page_article {
+  margin: 20px 0;
+  a {
+    text-decoration: underline;
+  }
+}

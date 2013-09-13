@@ -5,19 +5,26 @@
       <%= @article.content %>
     </p>
     <footer>
-      <p class="right">
+      <p>
         <span title="<%= @article.created_at %>"><%= date_format @article.created_at %></span>
         (
         #<%= link_to @article.category.name, @article.category %>
-        )
-      </p>
-    </footer>
-  </article>
+      )
+    </p>
+  </footer>
+</article>
 </div>
-<div id="disqus_thread">
-
+<div class="page_article">
+  <div class="row">
+    <div class="large-6 columns">
+      <%= link_to(@article.previous_article.title, @article.previous_article,) if @article.previous_article %>
+    </div>
+    <div class="large-6 columns">
+      <%= link_to(@article.next_article.title, @article.next_article, class: "right") if @article.next_article %>
+    </div>
+  </div>
 </div>
-
+<div id="disqus_thread"></div>
 <script type="text/javascript">
   /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
   var disqus_shortname = 'mlog-app'; // Required - Replace example with your forum shortname

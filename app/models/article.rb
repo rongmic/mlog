@@ -12,4 +12,12 @@ class Article < ActiveRecord::Base
   def self.most_viewed
     published.joins(:hitcount).order("count DESC").limit(5)
   end
+
+  def previous_article
+    self.class.published.first(conditions: ["title < ?", title], order: "created_at desc")
+  end
+
+  def next_article
+    self.class.published.first(conditions: ["title > ?", title], order: "created_at desc")
+  end
 end
