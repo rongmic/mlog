@@ -3,7 +3,7 @@
   <article>
     <header><h2><%= link_to article.title, article %></h2></header>
     <p>
-      <%= article.content %>
+      <%= raw markdown article.content %>
     </p>
     <footer>
       <p>

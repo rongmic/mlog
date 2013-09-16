@@ -37,6 +37,10 @@ gem 'kaminari'
 
 gem 'omniauth-weibo-oauth2'
 
+gem 'redcarpet'
+
+gem 'pygments.rb'
+
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false

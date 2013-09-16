@@ -2,7 +2,7 @@
   <article>
     <header><h2><%= @article.title %></h2></header>
     <p>
-      <%= @article.content %>
+      <%= raw markdown @article.content %>
     </p>
     <footer>
       <p>

@@ -3,7 +3,7 @@ class ArticlesController < ApplicationController
   after_filter :update_view_count, only: [:show]
 
   def index
-    @articles = Article.published.page(params[:page]).per(10)
+    @articles = Article.published.page(params[:page]).per(10).order('created_at desc')
     @categories = Category.all.order("articles_count DESC")
     @most_viewed_articles = Article.most_viewed
   end
