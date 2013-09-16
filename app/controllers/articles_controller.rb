@@ -18,6 +18,7 @@ class ArticlesController < ApplicationController
     @articles = Article.search(params[:s]).page(params[:page]).per(10)
     @categories = Category.all
     @search_key = params[:s]
+    @most_viewed_articles = Article.most_viewed
     render 'index', search_key: @search_key
   end
 

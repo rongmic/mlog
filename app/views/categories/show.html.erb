@@ -6,3 +6,25 @@
     <%= render partial: "articles/article" %>
   </div>
 </div>
+<div class="large-4 columns">
+  <section class="sidebar">
+    <div class="row collapse">
+      <%= form_tag "/search", method: "get" do %>
+      <div class="small-10 columns">
+        <input type="text" name="s" placeholder="Search">
+      </div>
+      <div class="small-2 columns">
+        <button type="submit" class="button prefix"><i class="foundicon-search"></i></button>
+      </div>
+        <% end %>
+    </div>
+  </section>
+
+  <section class="sidebar">
+    <%= render "categories/category" %>
+  </section>
+
+  <section id="hot_article" class="sidebar">
+    <%= render "articles/hot_article" %>
+  </section>
+</div>

@@ -7,6 +7,8 @@ class CategoriesController < ApplicationController
 
   def show
     @articles = @category.articles.published
+    @categories = Category.all
+    @most_viewed_articles = Article.most_viewed
   end
 
   private

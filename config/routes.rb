@@ -7,6 +7,7 @@ Mlog::Application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
   root 'home#index'
+  get 'about', to: "home#about", as: :about
 
   resources :articles
   resources :categories
