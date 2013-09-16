@@ -3,7 +3,7 @@ class Article < ActiveRecord::Base
   has_one :hitcount
   validates :title, presence: true
 
-  scope :published, -> { where( status: 1 ) }
+  scope :published, -> { where( status: 1 ).order('created_at desc') }
 
   def self.search query
     published.where("title like ?", "%#{query}%")

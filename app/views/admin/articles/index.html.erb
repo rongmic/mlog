@@ -3,6 +3,8 @@
   <span>List</span>
 </nav>
 
+<%= link_to "New Article", new_admin_article_path, class: "btn_new_article button right" %>
+
 <div class="section-container auto" data-section>
   <section>
     <p class="title" data-section-title><a href="#panel1">Articles</a></p>
@@ -11,37 +13,31 @@
       <table>
         <thead>
           <tr>
-            <th width="200">Title</th>
-            <th width="400">Content</th>
-            <th>Detail</th>
+            <th width="10%">Title</th>
+            <th width="50%">Content</th>
+            <th width="35%">Created at</th>
+            <th colspan="5%"></th>
           </tr>
         </thead>
         <tbody>
           <% @articles.each do |article| %>
             <tr>
-              <td><%= link_to article.title, '#' %></td>
+              <td><%= article.title %> <% if article.status == 0 %><kbd>unpublished</kbd><% end %></td>
               <td><%= truncate(article.content, length: 100) %></td>
               <td>
                 <%= article.created_at %>
-                , Top: <%= article.top %>
             </td>
+            <td>
+              <%= link_to "Edit", edit_admin_article_path(article) %>
+            </td>
+            <td>
+              <%= link_to "Delete", admin_article_path(article), method: 'delete', data: { confirm: 'Are you sure?' } %>
+              </td>
           </tr>
         <% end %>
       </tbody>
     </table>
   </div>
 </section>
-<section>
-  <p class="title" data-section-title><a href="#panel2">Published</a></p>
-  <div class="content" data-section-content>
-    <p>Content of section 2.</p>
-  </div>
-</section>
 
-<section>
-  <p class="title" data-section-title><a href="#panel2">Draft</a></p>
-  <div class="content" data-section-content>
-    <p>Content of section 2.</p>
-  </div>
-</section>
-</div>
+<%= paginate @articles %>

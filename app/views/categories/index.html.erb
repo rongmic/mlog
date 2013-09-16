@@ -1,8 +1,7 @@
-<% @categories.each do |category|%>
-  <%= link_to category do %>
-    
+<% @categories.each_with_index do |category, index|%>
+  <%= link_to category, class: "category_item" do %>
   <div class="large-3 columns">
     <span class="label secondary"><%= category.name %></span> x <%= category.articles_count %>
-    </div>
+</div>
   <% end %>
 <% end %>

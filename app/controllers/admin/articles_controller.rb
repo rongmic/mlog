@@ -2,7 +2,7 @@ class Admin::ArticlesController < Admin::BaseAdminController
   before_action :set_article, only: [:show, :edit, :update, :destroy]
 
   def index
-    @articles = Article.all
+    @articles = Article.all.page(params[:page]).per(10).order("created_at desc")
   end
 
   def new
@@ -20,6 +20,29 @@ class Admin::ArticlesController < Admin::BaseAdminController
       else
         format.text { "Occure Error while creating a new article" }
       end
+    end
+  end
+
+  def edit
+    @categories = Category.all
+  end
+
+  def update
+    respond_to do |format|
+      if @article.update(article_params)
+        format.html { redirect_to admin_articles_path, notice: 'Article was successfully updated.' }
+        format.json { head :no_content }
+      else
+        format.html { render action: 'edit' }
+        format.json { render json: @aritlce.errors, status: :unprocessable_entity }
+      end
+    end
+  end
+
+  def destroy
+    @article.destroy
+    respond_to do |format|
+      format.html { redirect_to admin_articles_path }
     end
   end
 
