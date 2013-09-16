@@ -1,0 +1,57 @@
+<nav class="breadcrumbs">
+  <%= link_to "Articles", admin_articles_path %>
+  <a href="javascript:;" class="unaviable current">Edit Article</a>
+</nav>
+
+<%= form_for @article, url: "/admin/articles/#{@article.id}", html: { class: "custom", method: "put" } do |f| %>
+  <div class="row">
+    <div class="large-12 columns">
+      <div class="row">
+        <div class="large-12 columns">
+          <%= f.label :title %>
+          <%= f.text_field :title, placeholder: "Title" %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="large-12 columns">
+          <%= f.label :category %>
+          <%= f.select :category_id, @categories.collect { |c| [c.name, c.id] }, { include_blank: "Please select category" }, class: "medium" %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="large-12 columns">
+          <%= f.label :content %>
+          <%= f.text_area :content, placeholder: "Content here", style: "height: 350px;" %>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="large-12 columns">
+          <label><%= f.check_box :top %>&nbsp;Set Top</label>
+        </div>
+      </div>
+    </div>
+    <div class="large-4 columns">
+      <% if @article.errors.any? %>
+        <div data-alert class="alert-box alert">
+          <a href="#" class="close">&times;</a>
+          <ul class="">
+            <li>dafasf</li>
+          </ul>
+        </div>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="large-12 columns">
+      <div class="panel submit-panel">
+        <%= f.submit "Update Article", class: "small button" %>
+        <%= f.button "Save to Draft", class: "small secondary button" %>
+        <%= link_to 'Cancel', admin_articles_path, class: "small secondary button" %>
+      </div>
+    </div>
+  </div>
+<% end %>
